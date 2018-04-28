@@ -25,9 +25,9 @@
   <header class="caption">
     <h1>Firefox Quantum: Developer Edition</h1>
     <p class="footer">
-      Angel Fernando Quiroz Campos,
-      <a href="https://twitter.com/willrre">@willrre</a>,
-      <a href="mailto:marti1125@gmail.com">marti1125@gmail.com</a>
+      Mozillian,
+      <a href="https://twitter.com/willrre">@mozillaperu</a>,
+      <a href="mailto:marti1125@gmail.com">hola@mozilla.pe</a>
     </p>
   </header>
 
@@ -41,18 +41,16 @@
       <strong>Abstract: </strong>
       Firefox Developer Edition es una versión de Firefox que agrega nuevas y experimentales carecterísticas que
       simplifican en proceso de desarrollo Web, ya sea de aplicaciones Web para escritorio como aplicaciones web
-      móviles. En este taller se mostrarán a los nuevos Desarrolladores Web cómo usar las herramientas de desarrollo
-      que se encuentran actualmente  en Firefox Developer Edition y a los desarrolladores experimentados cómo mejorar
-      el proceso de desarrolo de sus páginas o applicaciones Web con las DevTools de Firefox.
+      móviles.
     </p>
   </aside>
 
   <div id="cover" class="slide cover w"><div>
     <section>
       <header>
-        <h2>Firefox Developer Edition e Introducción a BackboneJS</h2>
+        <h2>Firefox Developer Edition</h2>
       </header>
-      <img src="pictures/dev-edition/cover.jpg"
+      <img src="pictures/dev-edition/fxdev.png"
            class="middle"
            alt="Firefox Developer Edition!">
       <footer class="notes">
@@ -63,239 +61,264 @@
   <div id="application-intro" class="slide"><div>
     <section>
       <header>
-        <h2>Aplicación a desarrollar</h2>
+        <h2>Inspector</h2>
       </header>
-      <img src="pictures/dev-edition/aplicacion.png"
+      <img src="pictures/dev-edition/inspector.svg"
            class="right"
-           alt="Chamilo Messaging"
+           alt="inspector logo"
            width="500">
       <ul>
-        <li>Conectarse a cualquier plataforma Chamilo LMS</li>
-        <li>Obtener mensajes no leídos</li>
-        <li>Leer mensajes con o sin conexión</li>
+        <li>Utiliza el Inspector para examinar y modificar el HTML y CSS de una página.</li>
+        <li>Inspecciona y perfecciona el código para crear diseños perfectos.</li>
       </ul>
-      <small class="credits">
-        <a href="https://github.com/chamilo/mobile-messaging">
-          Chamilo Messaging
-        </a>
-      </small>
       <footer class="notes">
       </footer>
     </section>
   </div></div>
 
-  <div id="application-source" class="slide oneline"><div>
+  <div id="inspector-intro" class="slide cover w"><div>
     <section>
       <header>
-        <h2><strong>HTML5 + Bootstrap</strong><br>
-          Underscore.js +<br>
-          Backbone.js +<br>
-          Require.js</h2>
+        <h2>Inspector - Desarrollo Web \ Inspector</h2>
       </header>
+      <img src="pictures/dev-edition/57-inspector-UI.png"
+           class="middle"
+           alt="Inspector">
       <footer class="notes">
+        algunas caracteriristicas del inspector
       </footer>
     </section>
   </div></div>
 
-  <!-- BackboneJS start -->
-
-  <div id="backbone-intro" class="slide shout"><div>
+  <div id="inspector-tour" class="slide"><div>
     <section>
       <header>
-        <h2><div>Backbone.JS</div></h2>
+        <h2>Inspector - Tour</h2>
       </header>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-  <div id="backbone-model-view" class="slide"><div>
-    <section>
-      <header>
-        <h2>Modelo</h2>
-      </header>
+      <img src="pictures/dev-edition/inspector-tour.png"
+           class="right"
+           alt="Inspector" width="500">
       <ul>
-        <li>Organizar los datos y la lógica del negocio</li>
-        <li>Cargar y guardar los datos en el servidor</li>
-        <li>Emitir eventos cuando los datos del modelo cambian</li>
-      </ul>
-      <header>
-        <h2>Vista</h2>
-      </header>
-      <ul>
-        <li>Escuchar eventos y renderiza la vista</li>
-        <li>Manejar el ingreso de datos e interactividad del usuario</li>
-        <li>Enviar los datos ingresados al modelo</li>
-      </ul>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-  <div id="backbone-models-views" class="slide"><div>
-    <section>
-      <header>
-        <h2>Modelos y Vistas</h2>
-      </header>
-      <img src="pictures/dev-edition/model-view.svg"
-           class="middle shadow"
-           alt="Modelos y vistas">
-      <small class="credits">
-        <a href="http://backbonejs.org/#Model-View-separation">
-          Backbonejs.org
-        </a>
-      </small>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-   <div id="backbone-model-code" class="slide"><div>
-    <section>
-      <header>
-        <h2>Modelo</h2>
-      </header>
-        <pre>
-          <code>var MessageModel = Backbone.Model.extend({</code>
-          <code>    defaults: { },</code>
-          <code>    save: function (attributes) {</code>
-          <code>        var deferred = $.Deferred();</code>
-          <code>        return deferred.promise();</code>
-          <code>    },</code>
-          <code>    delete: function () {</code>
-          <code>        var deferred = $.Deferred();</code>
-          <code>        return deferred.promise();</code>
-          <code>    }</code>
-          <code>});</code>
-        </pre>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-   <div id="backbone-view-code" class="slide"><div>
-    <section>
-      <header>
-        <h2>Vista</h2>
-      </header>
-        <pre>
-          <code>var MessageTemplate = '<h2><%= subject %></h2>' +</code>
-          <code>        '<div><%= content %></div>';</code>
-          <code> </code>
-          <code>var MessageView = Backbone.View.extend({</code>
-          <code>    el: 'body',</code>
-          <code>    template: _.template(MessageTemplate),</code>
-          <code>    render: function () {</code>
-          <code>        this.el.innerHTML = this.template(this.model.toJSON());</code>
-          <code>        return this;</code>
-          <code>    }</code>
-          <code>});</code>
-        </pre>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-  <div id="backbone-collection" class="slide"><div>
-    <section>
-      <header>
-        <h2>Colección</h2>
-      </header>
-      <ul>
-        <li>Grupo de modelos</li>
-        <li>Cargar y guardar nuevos modelos</li>
-        <li>Escucha eventos de cualquier modelo</li>
-      </ul>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-  <div id="backbone-collections-models-views" class="slide"><div>
-    <section>
-      <header>
-        <h2>Colecciones, modelos, vistas</h2>
-      </header>
-      <img src="pictures/dev-edition/collections.svg"
-           class="middle shadow"
-           alt="Colecciones">
-      <small class="credits">
-        <a href="http://backbonejs.org/#Model-Collections">
-          Backbonejs.org
-        </a>
-      </small>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-   <div id="backbone-collection-code" class="slide"><div>
-    <section>
-      <header>
-        <h2>Colección</h2>
-      </header>
-        <pre>
-          <code>var MessagesCollection = Backbone.Collection.extend({</code>
-          <code>    model: MessageModel,</code>
-          <code>    create: function (attributes) {</code>
-          <code>        var deferred = $.Deferred();</code>
-          <code>        return deferred.promise();</code>
-          <code>    },</code>
-          <code>    fetch: function () {</code>
-          <code>        var deferred = $.Deferred();</code>
-          <code>        return deferred.promise();</code>
-          <code>    }</code>
-          <code>});</code>
-        </pre>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-  <div id="backbone-router" class="slide"><div>
-    <section>
-      <header>
-        <h2>Router</h2>
-      </header>
-      <img src="pictures/dev-edition/routing.svg"
-           class="middle shadow"
-           alt="Rutas">
-      <small class="credits">
-        <a href="http://backbonejs.org/#Routing">
-          Backbonejs.org
-        </a>
-      </small>
-      <footer class="notes">
-      </footer>
-    </section>
-  </div></div>
-
-  <!-- DevEdition end -->
-
-  <div id="thanks" class="slide"><div>
-    <section>
-      <header>
-        <h2>Gracias</h2>
-      </header>
-      <!-- img src="pictures/mozillaoverview/redpanda.jpg" class="right" alt="Red panda (Firefox)" -->
-      <ul class="nobull">
-        <li>Angel Fernando Quiroz Campos</li>
-        <li>Mozilla Perú</li>
-        <li><a href="http://twitter.com/AngelFQC">@AngelFQC</a></li>
         <li>
-          <strong>Slides</strong>:
-          <a href="https://angelfqc.github.io/fx-dev-edition">angelfqc.github.io/fx-dev-edition</a>
+          <a href="https://developer.mozilla.org/es/docs/Tools/Page_Inspector" target="_blank">Tour por la UI</a>
         </li>
       </ul>
-      <!-- small class="credits">
-        <a href="http://www.flickr.com/photos/yortw/5798336827/">Photo by Yortw</a>
-      </small -->
+      <footer class="notes">
+        Hacer una breve reseña sobre el tour del inspector
+      </footer>
+    </section>
+  </div></div>
 
+  <div id="consola-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Consola</h2>
+      </header>
+      <img src="pictures/dev-edition/consola.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          te permite interactuar con la pagina ejecutando expresiones Javascript en el contexto de la página.
+        </li>
+      </ul>
       <footer class="notes">
       </footer>
     </section>
-  </div>
-</div>
+  </div></div>
+
+  <div id="depurador-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Depurador</h2>
+      </header>
+      <img src="pictures/dev-edition/depurador.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          El depurador te permite inspeccionar paso a paso el código de JavaScript y examinar
+          o modificar su estado ayudando a eliminar errores.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="red-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Red</h2>
+      </header>
+      <img src="pictures/dev-edition/red.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Monitoriza las solicitudes de redes que pueden ralentizar o bloquear tu sitio.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="panel-almacenamiento-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Panel de Almacenamiento</h2>
+      </header>
+      <img src="pictures/dev-edition/panel_almacenamiento.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Agregar, modificar y eliminar caché, cookies, bases de datos y datos de sesión.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="panel-almacenamiento-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Modo de Diseño Adaptable</h2>
+      </header>
+      <img src="pictures/dev-edition/modo_adaptable.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Prueba los sitios en dispositivos emulados en tu navegador.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="edicion-visual-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Edición visual</h2>
+      </header>
+      <img src="pictures/dev-edition/edicion_visual.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Mejora las animaciones, la alineación y el relleno.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="rendimiento-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Rendimiento</h2>
+      </header>
+      <img src="pictures/dev-edition/rendimiento.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Desbloquea cuellos de botella, agiliza procesos, optimiza recursos.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="memoria-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Memoria</h2>
+      </header>
+      <img src="pictures/dev-edition/memoria.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Encuentra pérdidas de memoria y haz que tu aplicación sea muy rápida.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="audio-web-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Audio Web</h2>
+      </header>
+      <img src="pictures/dev-edition/audio_web.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          La única herramienta de desarrollo para inspeccionar el API de audio web.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="borrador-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Borrador</h2>
+      </header>
+      <img src="pictures/dev-edition/borrador.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Edita, escribe y ejecuta código JavaScript en tiempo real.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="editor-estilos-intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Editor de estilos</h2>
+      </header>
+      <img src="pictures/dev-edition/editor_estilos.svg"
+           class="right"
+           alt="inspector logo"
+           width="500">
+      <ul>
+        <li>
+          Edita y administra todas tus hojas de estillo CSS en tu navegador.
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
 
   <div class="progress"><div></div></div>
   <div id="langMenuDivId"></div>
